@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*박스의 크기 기준을 정하는 속성*/
+}
+
+body{
+    background-color: darkslateblue;
+}
+
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.material-icons {
+    font-size: 10rem;
+}
+
+.large-text {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.small-text {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+#dynamic {
+    position: relative;
+    display: inline-block;
+}
+
+#dynamic::after{ /*가상요소 선택자 ::after*/
+    content:"";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 3px;
+    height: 100%;
+    background-color: #fff;
+}
+
+#dynamic.active::after{
+    display: none; /*active속성을 가지고 있다면 일시적으로 감춰지게함*/
+}
